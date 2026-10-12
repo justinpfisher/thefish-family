@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en-CA">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#f7f8fa" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="thefish.ca" />
+    <meta name="robots" content="noindex" />
+    <title>Private space · thefish.ca</title>
+    <link rel="stylesheet" href="styles.css?v=dashboard-20261011b" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="assets/icon-180.png" />
+    <link rel="icon" href="assets/fish.svg" />
+  </head>
+  <body class="app-body">
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header wrap">
+      <a class="brand" href="index.html"
+        ><img src="assets/fish-light.svg" width="42" height="42" alt="" /><span
+          >thefish.ca</span
+        ></a
+      ><span id="identity"></span>
+    </header>
+    <main id="main" class="app-wrap">
+      <div id="notice" role="status" aria-live="polite"></div>
+      <section id="login" class="login-card">
+        <p class="eyebrow">YOUR FAMILY SPACE</p>
+        <h1>Welcome home.</h1>
+        <p>Sign in to open your household’s space. Sign out when finished on shared devices.</p>
+        <form id="login-form">
+          <label
+            >Email<input
+              name="email"
+              type="email"
+              autocomplete="username"
+              required /></label
+          ><label
+            >Password<input
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              required
+              minlength="6" /></label
+          ><button class="button" type="submit">Sign in</button>
+        </form>
+        <p id="setup-message"></p>
+        <details>
+          <summary>Add to your iPhone Home Screen</summary>
+          <p>
+            Open this page in Safari, tap Share, then Add to Home Screen. Open
+            the new icon to sign in. Reminders are not active yet.
+          </p>
+        </details>
+      </section>
+      <section id="bank" hidden>
+        <div class="app-heading">
+          <div>
+            <p class="eyebrow">FAMILY TIME BANK</p>
+            <h1 id="bank-title">Your time bank</h1>
+          </div>
+          <button id="refresh" class="secondary">Refresh</button>
+        </div>
+        <div id="parent-dashboard" hidden></div>
+        <div id="child-view">
+        <label id="child-picker-label"
+          >Whose bank?<select id="child-picker"></select
+        ></label>
+        <div class="balance-card">
+          <div>
+            <span class="eyebrow">MINUTES BANKED</span
+            ><strong id="balance">0</strong><span id="available"></span>
+          </div>
+          <p>
+            Earn a little each day.<br />Save it for a parent-approved session.
+          </p>
+        </div>
+        <section class="panel">
+          <h2 id="routines-title">Today’s routines</h2>
+          <p class="muted">
+            Check off the whole routine, then ask a parent. Each approved
+            routine earns 10 minutes.
+          </p>
+          <div id="routines"></div>
+        </section>
+        <details class="panel" id="family-rules">
+          <summary>Family rules — chores, minutes and French viewing</summary>
+          <div id="family-rules-content"></div>
+        </details>
+        <section class="panel">
+          <h2>Ask for screen time</h2>
+          <p>
+            Sessions need a parent’s approval. Only minutes actually used are
+            deducted.
+          </p>
+          <form id="request-form" class="form-grid">
+            <label
+              >Minutes<input
+                name="minutes"
+                type="number"
+                min="1"
+                max="1440"
+                step="1"
+                required /></label
+            ><label
+              >Activity<select name="activity">
+                <option value="other">Games or other screen time</option>
+                <option value="tv">Television</option>
+              </select></label
+            ><button class="button">Ask a parent</button>
+          </form>
+
+        </section>
+        <section class="panel">
+          <h2>Screen-time requests</h2>
+          <div id="sessions"></div>
+        </section>
+        <section class="panel">
+          <h2>Your minute history</h2>
+          <div id="history"></div>
+        </section>
+        <details class="panel">
+          <summary>Home Screen and reminders</summary>
+          <p>On iPhone: Safari → Share → Add to Home Screen.</p>
+          <p>
+            Optional morning, evening, approval and screen-time reminders are
+            planned. Notifications are currently off. Your bank works without
+            them.
+          </p>
+        </details>
+        </div>
+      </section>
+    </main>
+    <footer class="wrap">
+      <a href="index.html">Back to thefish.ca</a
+      ><span>Private household space</span>
+    </footer>
+    <script type="module" src="app.js?v=public-board-20261011"></script>
+  </body>
+</html>
