@@ -775,3 +775,10 @@ summary {
 .setup-prompt p { font-size:.85rem; margin:0; }
 .setup-prompt .secondary { flex-shrink:0; }
 @media(max-width:600px){.setup-prompt {align-items:start;flex-direction:column;}.setup-prompt .secondary {width:100%;}}
+
+/* Reading and keyboard comfort; this changes presentation only. */
+.app-body .chore-list, .app-body .routine-tile .hint {font-size:.95rem;line-height:1.55;}
+#child-view .panel .muted, .app-body .family-rules-list {font-size:.95rem;line-height:1.55;}
+.app-body :focus-visible {outline:3px solid #245cc4;outline-offset:3px;}
+.app-body summary {min-height:44px;cursor:pointer;}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important;}}
