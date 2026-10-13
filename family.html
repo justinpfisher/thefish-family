@@ -11,7 +11,7 @@
     <meta name="apple-mobile-web-app-title" content="thefish.ca" />
     <meta name="robots" content="noindex" />
     <title>Private space · thefish.ca</title>
-    <link rel="stylesheet" href="styles.css?v=dashboard-20261011b" />
+    <link rel="stylesheet" href="styles.css?v=simple-bank-20261012" />
     <link rel="manifest" href="manifest.json" />
     <link rel="apple-touch-icon" href="assets/icon-180.png" />
     <link rel="icon" href="assets/fish.svg" />
@@ -45,7 +45,7 @@
               autocomplete="current-password"
               required
               minlength="6" /></label
-          ><button class="button" type="submit">Sign in</button>
+          ><button class="button" type="submit" disabled>Sign in</button>
         </form>
         <p id="setup-message"></p>
         <details>
@@ -58,79 +58,62 @@
       </section>
       <section id="bank" hidden>
         <div class="app-heading">
-          <div>
-            <p class="eyebrow">FAMILY TIME BANK</p>
-            <h1 id="bank-title">Your time bank</h1>
-          </div>
-          <button id="refresh" class="secondary">Refresh</button>
+          <div><h1 id="bank-title">Screen Time Bank</h1></div>
+          <details class="header-more">
+            <summary>More</summary>
+            <button id="refresh" class="secondary" type="button">Refresh</button>
+          </details>
         </div>
         <div id="parent-dashboard" hidden></div>
         <div id="child-view">
-        <label id="child-picker-label"
-          >Whose bank?<select id="child-picker"></select
-        ></label>
-        <div class="balance-card">
-          <div>
-            <span class="eyebrow">MINUTES BANKED</span
-            ><strong id="balance">0</strong><span id="available"></span>
+          <label id="child-picker-label" hidden>Whose bank?
+            <select id="child-picker"></select>
+          </label>
+          <div class="balance-card bank-hero">
+            <div><span class="eyebrow">YOUR SCREEN TIME BANK</span>
+              <strong id="balance">0</strong><span class="bank-unit">minutes</span>
+              <p id="available" class="hint"></p>
+            </div>
           </div>
-          <p>
-            Earn a little each day.<br />Save it for a parent-approved session.
-          </p>
-        </div>
-        <section class="panel">
-          <h2 id="routines-title">Today’s routines</h2>
-          <p class="muted">
-            Check off the whole routine, then ask a parent. Each approved
-            routine earns 10 minutes.
-          </p>
-          <div id="routines"></div>
-        </section>
-        <details class="panel" id="family-rules">
-          <summary>Family rules — chores, minutes and French viewing</summary>
-          <div id="family-rules-content"></div>
-        </details>
-        <section class="panel">
-          <h2>Ask for screen time</h2>
-          <p>
-            Sessions need a parent’s approval. Only minutes actually used are
-            deducted.
-          </p>
-          <form id="request-form" class="form-grid">
-            <label
-              >Minutes<input
-                name="minutes"
-                type="number"
-                min="1"
-                max="1440"
-                step="1"
-                required /></label
-            ><label
-              >Activity<select name="activity">
-                <option value="other">Games or other screen time</option>
-                <option value="tv">Television</option>
-              </select></label
-            ><button class="button">Ask a parent</button>
-          </form>
-
-        </section>
-        <section class="panel">
-          <h2>Screen-time requests</h2>
-          <div id="sessions"></div>
-        </section>
-        <section class="panel">
-          <h2>Your minute history</h2>
-          <div id="history"></div>
-        </section>
-        <details class="panel">
-          <summary>Home Screen and reminders</summary>
-          <p>On iPhone: Safari → Share → Add to Home Screen.</p>
-          <p>
-            Optional morning, evening, approval and screen-time reminders are
-            planned. Notifications are currently off. Your bank works without
-            them.
-          </p>
-        </details>
+          <section class="panel screen-use-panel">
+            <h2>Use screen time</h2>
+            <p class="muted">Got the OK? Start your timer or enter the minutes you used.</p>
+            <div id="sessions"></div>
+          </section>
+          <details class="panel request-panel" data-live-editor="true">
+            <summary>Ask for screen time</summary>
+            <p>A parent gives the OK first. You only spend minutes you actually use.</p>
+            <form id="request-form" class="form-grid">
+              <label>How many minutes?
+                <input name="minutes" type="number" min="1" max="1440" step="1" required />
+              </label>
+              <label>What for?
+                <select name="activity">
+                  <option value="other">Games or other screen time</option>
+                  <option value="tv">Television</option>
+                </select>
+              </label>
+              <button class="button">Ask Mum or Dad</button>
+            </form>
+          </details>
+          <section class="panel" id="routines-panel">
+            <h2 id="routines-title">Today's jobs</h2>
+            <p class="muted">When you've finished everything listed for morning or evening, tick I'm done! Mum or Dad will add your 10 minutes.</p>
+            <div id="routines"></div>
+          </section>
+          <details class="panel" id="family-rules">
+            <summary>Our family rules</summary>
+            <div id="family-rules-content"></div>
+          </details>
+          <details class="panel">
+            <summary>History &amp; fixes</summary>
+            <div id="history"></div>
+          </details>
+          <details class="panel">
+            <summary>iPhone and reminders</summary>
+            <p>In Safari: Share → Add to Home Screen.</p>
+            <p>Phone alerts are not switched on yet. Mum and Dad can see anything waiting for their OK inside the app.</p>
+          </details>
         </div>
       </section>
     </main>
@@ -138,6 +121,6 @@
       <a href="index.html">Back to thefish.ca</a
       ><span>Private household space</span>
     </footer>
-    <script type="module" src="app.js?v=public-board-20261011"></script>
+    <script type="module" src="app.js?v=simple-bank-20261012"></script>
   </body>
 </html>
