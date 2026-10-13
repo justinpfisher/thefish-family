@@ -871,3 +871,12 @@ summary {
 .goals-summary .secondary {display:inline-flex;align-items:center;margin-top:8px;}
 .child-overview .bank-hero {position:static;}
 #my-goals {scroll-margin-top:16px;}
+
+/* Approved Option P logo; shared across public and family without altering bank colours. */
+.brand img.brand-lockup { display:block; height:50px; width:auto; max-width:min(170px,42vw); object-fit:contain; }
+.minimal-home .home-brand-lockup { display:block; width:min(72vw,280px); height:auto; }
+.minimal-home h1:has(.home-brand-lockup) { margin:0; font-size:0; }
+@media(max-width:420px) {
+ .app-body .site-header .brand img.brand-lockup,
+ .public-board .site-header .brand img.brand-lockup { height:44px; max-width:40vw; }
+}
