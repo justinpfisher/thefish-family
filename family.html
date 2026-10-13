@@ -10,12 +10,11 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="thefish.ca" />
     <meta name="robots" content="noindex" />
-    <title>Private space · thefish.ca</title>
-    <link rel="stylesheet" href="styles.css?v=reading-20261013" />
+    <title>Family space · thefish.ca</title>
+    <link rel="stylesheet" href="styles.css?v=family-progress-20261013" />
     <link rel="manifest" href="manifest.json" />
     <link rel="apple-touch-icon" href="assets/icon-180.png" />
-
-
+    <link rel="icon" href="assets/icon-192.png" />
   </head>
   <body class="app-body">
     <a class="skip" href="#main">Skip to content</a>
@@ -31,7 +30,7 @@
       <section id="login" class="login-card">
         <p class="eyebrow">YOUR FAMILY SPACE</p>
         <h1>Welcome home.</h1>
-        <p>Sign in to see your family’s minutes. On a shared device, sign out when you’re finished.</p>
+        <p>Sign in to see your goals, jobs and minutes. On a shared device, sign out when you're finished.</p>
         <form id="login-form">
           <label
             >Email<input
@@ -50,10 +49,10 @@
         </form>
         <p id="setup-message"></p>
         <details>
-          <summary>Add to your iPhone Home Screen</summary>
+          <summary>Add to an iPhone or iPad</summary>
           <p>
-            Open this page in Safari, tap Share, then Add to Home Screen. Open
-            the new icon to sign in. Reminders are not active yet.
+            Open this page in Safari. Tap Share, then Add to Home Screen.
+            Open the new icon and sign in there. Phone reminders aren't available yet.
           </p>
         </details>
       </section>
@@ -66,41 +65,46 @@
           </details>
         </div>
         <div id="parent-dashboard" hidden></div>
+        <section id="parent-goals" class="panel" hidden></section>
         <div id="child-view">
           <label id="child-picker-label" hidden>Whose bank?
             <select id="child-picker"></select>
           </label>
+          <div class="child-overview">
+          <section id="goals-summary" class="panel goals-summary" aria-label="Your goals"></section>
           <div class="balance-card bank-hero">
-            <div><span class="eyebrow">YOUR SCREEN TIME BANK</span>
+            <div><span class="eyebrow">YOUR MINUTES</span>
               <strong id="balance">0</strong><span class="bank-unit">minutes</span>
               <p id="available" class="hint"></p>
             </div>
           </div>
-          <section class="panel screen-use-panel">
-            <h2>Use screen time</h2>
-            <p class="muted">Got the OK? Start your timer or enter the minutes you used.</p>
-            <div id="sessions"></div>
-          </section>
-          <details class="panel request-panel" data-live-editor="true">
-            <summary>Ask for screen time</summary>
-            <p>A parent gives the OK first. You only spend minutes you actually use.</p>
-            <form id="request-form" class="form-grid">
-              <label>How many minutes?
-                <input name="minutes" type="number" min="1" max="1440" step="1" required />
-              </label>
-              <label>What for?
-                <select name="activity">
-                  <option value="other">Games or other screen time</option>
-                  <option value="tv">Television</option>
-                </select>
-              </label>
-              <button class="button">Ask Mama or Dad</button>
-            </form>
-          </details>
+          </div>
           <section class="panel" id="routines-panel">
             <h2 id="routines-title">Today's jobs</h2>
-            <p class="muted">When you're done, tap I'm done! Mama or Dad will check your jobs. You don't need the app before school.</p>
+            <p class="muted" id="routines-help">When you're done, tap I'm done! Mama or Dad will check your jobs. You don't need the app before school.</p>
             <div id="routines"></div>
+          </section>
+          <section id="my-goals" class="panel"></section>
+          <details class="panel" id="catchup-panel" hidden>
+            <summary>Catch up on earlier jobs</summary>
+            <p class="muted">If you finished these jobs before their deadline, mark them now. Mama or Dad will check before adding minutes.</p>
+            <div id="catchup-list"></div>
+          </details>
+          <section class="panel screen-use-panel">
+            <h2>Record screen time</h2>
+            <div id="direct-timer" class="direct-timer"></div>
+            <form id="manual-use-form" class="inline-form">
+              <label>Minutes used
+                <input name="minutes" type="number" min="1" max="1440" step="1"
+                  inputmode="numeric" required />
+              </label>
+              <button class="button" type="submit">Record minutes</button>
+            </form>
+            <p class="muted">Use the timer or enter how many minutes you used. Only those minutes come out of your bank.</p>
+            <details id="legacy-session-details" hidden>
+              <summary>Earlier screen-time requests</summary>
+              <div id="sessions"></div>
+            </details>
           </section>
           <details class="panel" id="family-rules">
             <summary>How screen time works</summary>
@@ -112,16 +116,16 @@
           </details>
           <details class="panel">
             <summary>Add this to your phone or iPad</summary>
-            <p>In Safari: Share → Add to Home Screen.</p>
-            <p>Phone alerts are not switched on yet. Mama and Dad can see anything waiting for their OK inside the app.</p>
+            <p>In Safari: tap Share → Add to Home Screen. Then open the icon.</p>
+            <p>Phone reminders aren't available yet. Mama or Dad can see jobs waiting to be checked when they sign in.</p>
           </details>
         </div>
       </section>
     </main>
     <footer class="wrap">
       <a href="index.html">Back to thefish.ca</a
-      ><span>Private household space</span>
+      ><span>For our family</span>
     </footer>
-    <script type="module" src="app.js?v=simple-bank-20261012"></script>
+    <script type="module" src="app.js?v=family-progress-20261013"></script>
   </body>
 </html>

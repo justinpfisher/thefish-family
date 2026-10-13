@@ -776,9 +776,93 @@ summary {
 .setup-prompt .secondary { flex-shrink:0; }
 @media(max-width:600px){.setup-prompt {align-items:start;flex-direction:column;}.setup-prompt .secondary {width:100%;}}
 
-/* Reading and keyboard comfort; this changes presentation only. */
-.app-body .chore-list, .app-body .routine-tile .hint {font-size:.95rem;line-height:1.55;}
-#child-view .panel .muted, .app-body .family-rules-list {font-size:.95rem;line-height:1.55;}
-.app-body :focus-visible {outline:3px solid #245cc4;outline-offset:3px;}
-.app-body summary {min-height:44px;cursor:pointer;}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important;}}
+/* Single-purpose free-time logging: no permission request or activity selector. */
+#child-view .screen-use-panel { margin-top: 12px; }
+#child-view .screen-use-panel .direct-timer { padding: 8px 0 12px; }
+#child-view .direct-timer > .button { min-height: 50px; width: 100%; font-size: 1.08rem; }
+#child-view .direct-timer .timer-readout { display: block; text-align: center; font-size: clamp(2.1rem, 10vw, 3.5rem); font-variant-numeric: tabular-nums; padding: 5px 0; color: var(--ink); }
+#child-view .direct-timer .hint { line-height: 1.5; }
+#child-view .direct-timer .inline-form { align-items: stretch; }
+#manual-use-form { display: flex; gap: 12px; flex-wrap: wrap; align-items: end; margin-top: 8px; }
+#manual-use-form[hidden] { display: none; }
+#manual-use-form label { flex: 1 1 160px; margin: 0; }
+#manual-use-form button { flex: 1 1 160px; min-height: 48px; }
+#legacy-session-details { margin-top: 16px; border-top: 1px solid var(--line); padding-top: 12px; }
+#legacy-session-details[hidden] { display: none; }
+#legacy-session-details summary { font-size: .9rem; cursor: pointer; }
+.family-rules-group { margin: 18px 0; }
+.family-rules-group h3 { font-size: 1rem; margin-bottom: 8px; }
+.family-rules-list { margin: 6px 0 10px; padding-left: 1.25rem; font-size: .87rem; line-height: 1.55; }
+.family-rules-list li { margin: 7px 0; }
+.app-body #notice:not(:empty) { display: inline-block; padding: 7px 12px; border-radius: 8px; font-size: .82rem; margin: 4px 0; }
+.app-body #notice.error { display:block; }
+.app-body .app-heading { align-items: center; gap: 12px; }
+.app-body .header-more > summary { padding: 6px 10px; }
+.app-body .header-more .secondary { padding: 5px 10px; font-size: .78rem; min-height: 40px; }
+#parent-dashboard .card-section > .inline-form { margin: 8px 0; }
+#parent-dashboard .card-section .hint { margin: 6px 0; font-size: .8rem; }
+@media(max-width:600px){
+  #child-view .direct-timer .inline-form,
+  #manual-use-form { display: flex; flex-direction: column; align-items: stretch; }
+  #child-view .direct-timer .inline-form > label,
+  #manual-use-form > label { flex: none; width: 100%; }
+  #child-view .direct-timer .inline-form > button,
+  #manual-use-form > button { flex: none; width: 100%; }
+  .family-rules-list { font-size: .85rem; }
+}
+
+/* Family reading comfort: don't make essential instructions tiny on phones. */
+.app-body .routine-heading .status { font-size: .875rem; }
+.app-body .routine-tile .hint { font-size: .9rem; line-height: 1.5; }
+.app-body .routine-tile .button { font-size: .95rem; min-height: 44px; }
+.app-body .chore-list { font-size: .95rem; line-height: 1.55; }
+#child-view .panel .muted { font-size: .95rem; line-height: 1.5; }
+#child-view .family-rules-list,
+#parent-dashboard .family-rules-list { font-size: .95rem; line-height: 1.55; max-width: 68ch; }
+.app-body #notice:not(:empty) { font-size: .95rem; line-height: 1.5; }
+#parent-dashboard .card-section .hint { font-size: .9rem; line-height: 1.5; }
+#board-status { font-size: .95rem; }
+
+/* Shared productivity surface: calm, readable, light, and keyboard accessible. */
+.app-body, .public-board {
+ --paper:#f8f9fb; --surface:#fff; --ink:#17212f; --text:#334155;
+ --muted:#526174; --accent:#245cc4; --line:#d7dfe9; color-scheme:light;
+ background:var(--paper); color:var(--text);
+}
+.app-body .button {background:var(--accent);color:#fff;border-color:var(--accent);}
+.app-body .button:hover {background:#194ca9;border-color:#194ca9;}
+.app-body input, .app-body select {background:#fff;color:var(--ink);border-color:#94a3b8;}
+.app-body .eyebrow {color:#526174;}
+.app-body .panel, .app-body .balance-card {background:#fff;border:1px solid var(--line);box-shadow:none;}
+.app-body :focus-visible, .public-board :focus-visible {outline:3px solid #245cc4;outline-offset:3px;}
+.app-body summary {min-height:44px;display:flex;align-items:center;cursor:pointer;}
+.app-body .hint {color:var(--muted);font-size:.95rem;line-height:1.5;}
+#child-view {max-width:1000px;}
+.child-overview {display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.65fr);gap:18px;align-items:start;}
+#child-view .child-overview > .panel, .child-overview .bank-hero {margin:0;}
+.child-overview .bank-hero {position:sticky;top:16px;}
+.goal-card {border-top:1px solid var(--line);padding:16px 0;overflow-wrap:anywhere;}
+.goal-card h3 {font-size:1.1rem;line-height:1.35;}
+.goal-card p {margin:8px 0;font-size:.95rem;}
+.goal-card .button,.goal-card .secondary {margin:8px 8px 0 0;}
+.goal-card progress {display:block;width:100%;height:10px;accent-color:#245cc4;margin:10px 0 14px;}
+.goal-form {display:grid;gap:12px;margin:12px 0;}
+.goal-editor {padding:8px 0;}
+.goals-person {min-width:0;}
+#parent-goals .goals-person {margin-top:18px;padding-top:12px;border-top:1px solid var(--line);}
+#parent-goals h2 {font-size:1.25rem;}
+#parent-goals h3 {font-size:1.15rem;}
+.goal-history {padding:12px 0;border-top:1px solid var(--line);}
+@media(max-width:700px) {
+ .child-overview {grid-template-columns:1fr;}
+ .child-overview .bank-hero {position:static;}
+ .app-body .site-header {height:auto;min-height:80px;padding-block:16px;gap:12px;flex-wrap:wrap;}
+ .app-body .site-header .brand {font-size:1.15rem;}
+}
+@media(prefers-reduced-motion:reduce) {*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important;}}
+
+/* Keep the essentials in view; detailed plans stay below today's jobs. */
+.goals-summary .goal-destination {display:block;font-size:clamp(1.25rem,3vw,1.7rem);line-height:1.3;margin:12px 0;overflow-wrap:anywhere;color:var(--ink);}
+.goals-summary .secondary {display:inline-flex;align-items:center;margin-top:8px;}
+.child-overview .bank-hero {position:static;}
+#my-goals {scroll-margin-top:16px;}
