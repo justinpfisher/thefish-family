@@ -970,3 +970,47 @@ summary {
   .parent-glance-period {display:block;}
   .parent-glance-period span {display:block;text-align:left!important;}
 }
+
+
+/* Guided, age-flexible goals: one decision at a time, never five unexplained fields. */
+#my-goals > h2 {margin-bottom:12px;}
+.goals-person > h3 {margin:22px 0 8px;font-size:1.14rem;}
+.goals-person > .hint {margin:4px 0 12px;}
+.goal-wizard {border:1px solid #cddbd9;background:#f7fbfa;border-radius:14px;padding:0 14px;margin:14px 0;}
+.goal-wizard > summary {font-weight:700;color:#173f43;min-height:48px;list-style-position:inside;}
+.goal-wizard[open] {padding-bottom:14px;}
+.goal-flow {gap:10px;}
+.goal-flow-step {min-width:0;display:grid;gap:14px;}
+.goal-flow-step[hidden] {display:none!important;}
+.goal-flow-step > h3 {font-size:1.13rem;margin:5px 0 0;}
+.goal-flow-step > .hint {margin:0;}
+.goal-flow-step label {min-width:0;display:grid;gap:7px;font-weight:600;line-height:1.4;}
+.goal-flow-step label input,.goal-flow-step label select {margin:0;width:100%;max-width:100%;font-size:1rem;}
+.goal-step {font-size:.85rem;font-weight:700;letter-spacing:.02em;color:#435e60;}
+.goal-categories {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;}
+.goal-category {min-width:0;min-height:106px;border:1.5px solid #c9d6d3;border-radius:12px;padding:14px 12px;background:#fff;color:#182436;display:flex;flex-direction:column;align-items:start;justify-content:start;gap:7px;text-align:left;cursor:pointer;}
+.goal-category strong {font-size:.95rem;line-height:1.3;}
+.goal-category span {font-size:.86rem;line-height:1.4;color:#526174;}
+.goal-category[aria-pressed="true"] {border-color:#357c70;background:#e8f4ef;box-shadow:inset 0 0 0 1px #357c70;}
+.goal-examples {display:grid;gap:8px;}
+.goal-examples h4,.goal-plan-preview h4 {font-size:.97rem;margin:2px 0;}
+.goal-example {display:block;width:100%;text-align:left;white-space:normal;}
+.goal-step-actions {display:flex;gap:10px;flex-wrap:wrap;}
+.goal-step-actions .button,.goal-step-actions .secondary {min-height:44px;white-space:normal;text-align:center;}
+.goal-plan-preview {padding:14px;border:1px solid #cadfd8;background:#edf6f2;border-radius:12px;}
+.goal-plan-preview p {overflow-wrap:anywhere;margin:8px 0;font-size:.95rem;line-height:1.5;}
+.goal-kind {font-size:.8rem!important;letter-spacing:.04em;text-transform:uppercase;font-weight:700;color:#405a61;}
+.goal-earlier {margin:12px 0;padding-top:8px;border-top:1px solid #d7dfe9;}
+.agreed-class-list {display:grid;gap:12px;padding-block:8px;}
+.agreed-class-item {display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:1px solid #d7dfe9;padding:8px 0;}
+.agreed-class-item button {max-width:100%;white-space:normal;}
+.child-shortcuts {display:flex;gap:8px;flex-wrap:wrap;margin:12px 0;}
+.child-shortcuts a {display:inline-flex;min-height:44px;align-items:center;padding:8px 11px;border:1px solid #d7dfe9;border-radius:10px;color:#294665;background:#fff;font-size:.9rem;font-weight:600;text-decoration:none;}
+.child-shortcuts a:hover {background:#edf6f2;}
+#routines-panel,#screen-use-panel {scroll-margin-top:14px;}
+@media(max-width:400px) {
+ .goal-categories {grid-template-columns:1fr;}
+ .goal-category {min-height:72px;}
+ .goal-step-actions > .button {flex:1;}
+ .child-shortcuts a {font-size:.84rem;padding-inline:9px;}
+}
