@@ -797,10 +797,20 @@ summary {
 #legacy-session-details { margin-top: 16px; border-top: 1px solid var(--line); padding-top: 12px; }
 #legacy-session-details[hidden] { display: none; }
 #legacy-session-details summary { font-size: .9rem; cursor: pointer; }
-.family-rules-group { margin: 18px 0; }
-.family-rules-group h3 { font-size: 1rem; margin-bottom: 8px; }
-.family-rules-list { margin: 6px 0 10px; padding-left: 1.25rem; font-size: .87rem; line-height: 1.55; }
-.family-rules-list li { margin: 7px 0; }
+.family-rules-group { margin: 20px 0; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.family-rules-group:last-child { border-bottom: 0; padding-bottom: 0; }
+.family-rules-group h3 { font-size: 1.1rem; margin: 0 0 10px; }
+.family-rules-block { margin: 10px 0 14px; max-width: 68ch; }
+.family-rules-block h4 { font-size: .98rem; margin: 0 0 5px; color: var(--ink); }
+.family-rules-list { margin: 6px 0 10px; padding-left: 1.35rem; font-size: .95rem; line-height: 1.55; }
+.family-rules-list li { margin: 6px 0; }
+.family-rules-note { margin: 7px 0; font-size: .95rem; line-height: 1.55; }
+.family-rules-table { width: 100%; max-width: 28rem; border-collapse: collapse; margin: 6px 0 12px; font-size: .95rem; line-height: 1.5; }
+.family-rules-table th, .family-rules-table td { border-bottom: 1px solid var(--line); padding: 7px 10px; text-align: left; }
+.family-rules-table tbody th { font-weight: 400; }
+.family-rules-table thead th { font-weight: 700; }
+.family-rules-table td { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.family-rules-table tfoot th, .family-rules-table tfoot td { font-weight: 700; border-bottom: 0; }
 .app-body #notice:not(:empty) { display: inline-block; padding: 7px 12px; border-radius: 8px; font-size: .82rem; margin: 4px 0; }
 .app-body #notice.error { display:block; }
 .app-body .app-heading { align-items: center; gap: 12px; }
@@ -815,7 +825,7 @@ summary {
   #manual-use-form > label { flex: none; width: 100%; }
   #child-view .direct-timer .inline-form > button,
   #manual-use-form > button { flex: none; width: 100%; }
-  .family-rules-list { font-size: .85rem; }
+  .family-rules-list { font-size: .95rem; }
 }
 
 /* Family reading comfort: don't make essential instructions tiny on phones. */
@@ -1076,3 +1086,9 @@ summary {
   .insights-stat-value{font-size:1.2rem;}
 }
 @media(max-width:330px){.insights-stats{grid-template-columns:1fr;}}
+
+/* Parent-only preparation warning; a missing job is not proof work was missed. */
+.routine-coverage-warning {border-color:#d7b87a!important;background:#fffaf0!important;padding:15px 18px;margin:10px 0!important;}
+.routine-coverage-warning strong {display:block;color:#62430e;font-size:.98rem;}
+.routine-coverage-warning p {margin:6px 0 10px;font-size:.94rem;line-height:1.45;color:#485465;}
+.routine-coverage-warning button {min-height:44px;white-space:normal;}
