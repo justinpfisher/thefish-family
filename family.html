@@ -11,7 +11,7 @@
     <meta name="apple-mobile-web-app-title" content="thefish.ca" />
     <meta name="robots" content="noindex" />
     <title>Family space · thefish.ca</title>
-    <link rel="stylesheet" href="styles.css?v=852d5ee3ff530996" />
+    <link rel="stylesheet" href="styles.css?v=364d33bbe350dc0e" />
     <link rel="manifest" href="manifest.json" />
     <link rel="apple-touch-icon" href="assets/icon-180.png" />
     <link rel="icon" href="assets/brand-favicon.svg" type="image/svg+xml" />
@@ -63,8 +63,13 @@
             <button id="refresh" class="secondary" type="button">Refresh</button>
           </details>
         </div>
+        <nav id="parent-tabs" class="parent-tabs" aria-label="Parent views" hidden>
+          <button type="button" class="parent-tab" data-parent-view="today" aria-pressed="true">Today</button>
+          <button type="button" class="parent-tab" data-parent-view="insights" aria-pressed="false">Insights</button>
+        </nav>
         <div id="parent-dashboard" hidden></div>
         <section id="parent-goals" class="panel" hidden></section>
+        <section id="parent-insights" class="parent-insights" aria-label="Parent insights" hidden></section>
         <div id="child-view">
           <label id="child-picker-label" hidden>Whose bank?
             <select id="child-picker"></select>
@@ -130,6 +135,6 @@
       <a href="index.html">Back to thefish.ca</a
       ><span>For our family</span>
     </footer>
-    <script type="module" src="app.js?v=dcc3cfd578966973"></script>
+    <script type="module" src="app.js?v=310beb470dcaaba3"></script>
   </body>
 </html>
