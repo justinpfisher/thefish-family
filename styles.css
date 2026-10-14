@@ -1092,3 +1092,26 @@ summary {
 .routine-coverage-warning strong {display:block;color:#62430e;font-size:.98rem;}
 .routine-coverage-warning p {margin:6px 0 10px;font-size:.94rem;line-height:1.45;color:#485465;}
 .routine-coverage-warning button {min-height:44px;white-space:normal;}
+
+/* Installed-app gesture feedback; hidden until the page is pulled down. */
+#pull-refresh {
+  position: fixed;
+  z-index: 60;
+  top: calc(env(safe-area-inset-top, 0px) + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  width: max-content;
+  max-width: calc(100vw - 32px);
+  padding: 9px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  background: #fff;
+  color: #25354d;
+  box-shadow: 0 4px 18px #18243624;
+  font-size: .9rem;
+  font-weight: 650;
+  text-align: center;
+}
+#pull-refresh[hidden] { display: none; }
+#pull-refresh[data-ready="true"] { border-color: #9bc8be; background: #eff8f5; }
