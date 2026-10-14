@@ -619,6 +619,8 @@ summary {
 .app-body :focus-visible { outline-color: #1767dc; }
 .app-body #notice:not(:empty) { position: static; background: #edf8f1; color: #166534; border-color: #c1e6cc; }
 .app-body #notice.error { background: #fff0ef; color: #9f2924; border-color: #f2bcb8; }
+/* Keep a real save error in view when a child is deep in jobs or goal forms. */
+.app-body #notice.error:not(:empty) { position: sticky; top: 8px; z-index: 15; max-width: 100%; box-shadow: 0 3px 16px #18243620; }
 .app-body .balance-card { background: #edf3fc; color: var(--ink); }
 .app-body .balance-card .eyebrow { color: #577296; }
 .app-body .status { background: #eef2f7; color: #40516a; }
