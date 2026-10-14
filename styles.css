@@ -1014,3 +1014,15 @@ summary {
  .goal-step-actions > .button {flex:1;}
  .child-shortcuts a {font-size:.84rem;padding-inline:9px;}
 }
+
+
+/* Honest goal participation history: no streak, ranking, or implied proficiency. */
+.goal-recent {margin:12px 0;padding:0 0 4px;border-top:1px solid #d7dfe9;}
+.goal-recent > summary {font-size:.91rem;font-weight:600;min-height:44px;}
+.goal-recent .hint {margin:8px 0;font-size:.9rem;line-height:1.45;}
+.goal-weeks {list-style:none;padding:0;margin:8px 0;}
+.goal-week {display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding:9px 0;border-bottom:1px solid #edf1f4;font-size:.92rem;}
+.goal-week strong {font-size:.9rem;color:#334155;font-weight:600;}
+@media(max-width:400px) {
+ .goal-week {flex-direction:column;gap:2px;}
+}
