@@ -1115,3 +1115,43 @@ summary {
 }
 #pull-refresh[hidden] { display: none; }
 #pull-refresh[data-ready="true"] { border-color: #9bc8be; background: #eff8f5; }
+
+/* Optional, child-owned weekly practice planning. No fixed activity deadlines. */
+.goal-week-days{display:grid;grid-template-columns:repeat(auto-fit,minmax(115px,1fr));gap:.45rem;margin:.6rem 0;padding:.6rem;border:1px solid var(--border,#d9e0e8);border-radius:.65rem}
+.goal-week-days legend{font-weight:600;padding:0 .3rem}
+.goal-week-day{display:flex;align-items:center;gap:.55rem;min-height:44px;font-weight:500}
+.goal-week-day input{width:1.15rem;height:1.15rem;flex:none}
+.goal-today-practice{display:flex;align-items:center;flex-wrap:wrap;justify-content:space-between;gap:.65rem;padding:.5rem 0}
+.goal-today-practice+.goal-today-practice{border-top:1px solid var(--border,#d9e0e8)}
+@media(max-width:380px){.goal-week-days{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Preferred days during goal creation and private parent-reviewed activity edits. */
+.goal-wizard-days[hidden]{display:none!important}
+.goal-wizard-days>.hint{grid-column:1/-1;margin:.15rem 0 .4rem}
+.goal-terms-editor,.goal-edit-request{margin-top:.8rem}
+.goal-edit-request{padding:.8rem;border:1px solid var(--border,#d9e0e8);border-radius:.7rem}
+.goal-edit-request>*{margin-block:.4rem}
+.goal-edit-request button{min-height:44px;margin-right:.35rem;margin-top:.35rem}
+/* Qualified-goals milestone surfaces: family reports, not automatic promotions. */
+.goal-milestones {border-top:1px solid #d7dfe9;margin:12px 0 8px;padding-top:5px;}
+.goal-milestones > summary {min-height:44px;font-weight:650;font-size:.95rem;}
+.goal-milestones > .hint {font-size:.9rem;margin:8px 0;}
+.goal-milestone-item {border:1px solid #dce5e8;border-radius:12px;padding:12px;margin:10px 0;background:#f9fbfc;display:grid;gap:5px;overflow-wrap:anywhere;}
+.goal-milestone-item > strong {font-size:1rem;color:#17212f;line-height:1.35;}
+.goal-milestone-item > p {margin:0;font-size:.91rem;line-height:1.4;}
+.goal-milestone-date {color:#526174;font-size:.85rem;}
+.goal-milestone-status {font-weight:600;color:#294f53;}
+.goal-milestone-report {margin:12px 0 8px;padding:0 10px 10px;border:1px solid #c9dcd7;border-radius:10px;background:#f4faf7;}
+.goal-milestone-report > summary {font-size:.95rem;font-weight:600;}
+.goal-milestone-report label,.goal-milestone-review label {display:grid;gap:7px;font-size:.95rem;font-weight:600;}
+.goal-milestone-report input,.goal-milestone-report select,.goal-milestone-review input,.goal-milestone-review select {width:100%;max-width:100%;font-size:1rem;}
+.goal-milestone-review {margin:10px 0 0;}
+.goal-milestone-review .goal-step-actions {display:flex;flex-wrap:wrap;gap:8px;}
+.goal-milestone-review .goal-step-actions button {white-space:normal;text-align:center;min-height:44px;}
+
+.goal-step-suggestion {padding:10px 12px;border:1px solid #c9dcd7;border-radius:10px;background:#edf6f2;display:grid;gap:8px;}
+.goal-step-suggestion .hint {margin:0;font-size:.9rem;}
+.goal-step-suggestion button {justify-self:start;min-height:44px;white-space:normal;}
+
+.build-identity{display:block;font-size:.75rem;line-height:1.5;color:#536174;overflow-wrap:anywhere}
+.version-footer{text-align:center;padding:16px}footer .build-identity{flex-basis:100%}.minimal-home>.version-footer{position:absolute;bottom:0;left:0;right:0}
