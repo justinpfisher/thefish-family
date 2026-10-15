@@ -11,7 +11,7 @@
     <meta name="apple-mobile-web-app-title" content="thefish.ca" />
     <meta name="robots" content="noindex" />
     <title>Family space · thefish.ca</title>
-    <link rel="stylesheet" href="styles.css?v=06b210f060fd91aa" />
+    <link rel="stylesheet" href="styles.css?v=a1ff249f0fba1084" />
     <link rel="manifest" href="manifest.json" />
     <link rel="apple-touch-icon" href="assets/icon-180.png" />
     <link rel="icon" href="assets/brand-favicon.svg" type="image/svg+xml" />
@@ -51,7 +51,7 @@
           <summary>Add to an iPhone or iPad</summary>
           <p>
             Open this page in Safari. Tap Share, then Add to Home Screen.
-            Open the new icon and sign in there. Phone reminders aren't available yet.
+            Open the new icon and sign in there. If notifications are available, you can choose them after signing in.
           </p>
         </details>
       </section>
@@ -66,10 +66,12 @@
         <nav id="parent-tabs" class="parent-tabs" aria-label="Parent views" hidden>
           <button type="button" class="parent-tab" data-parent-view="today" aria-pressed="true">Today</button>
           <button type="button" class="parent-tab" data-parent-view="insights" aria-pressed="false">Insights</button>
+          <button type="button" class="parent-tab" id="feedback-tab" data-parent-view="feedback" aria-label="Reports and ideas" aria-pressed="false">Reports</button>
         </nav>
         <div id="parent-dashboard" hidden></div>
         <section id="parent-goals" class="panel" hidden></section>
         <section id="parent-insights" class="parent-insights" aria-label="Parent insights" hidden></section>
+        <section id="parent-feedback" class="panel feedback-view" hidden></section>
         <div id="child-view">
           <label id="child-picker-label" hidden>Whose bank?
             <select id="child-picker"></select>
@@ -87,6 +89,7 @@
             <a href="#routines-panel">Today’s jobs</a>
             <a href="#my-goals">Goals and activities</a>
             <a href="#screen-use-panel">Screen time</a>
+            <a id="feedback-shortcut" href="#feedback-child">Share feedback</a>
           </nav>
           <section class="panel" id="routines-panel">
             <h2 id="routines-title">Today's jobs</h2>
@@ -94,6 +97,7 @@
             <div id="routines"></div>
           </section>
           <section id="my-goals" class="panel"></section>
+          <section id="feedback-child" class="panel feedback-view" hidden></section>
           <details class="panel" id="catchup-panel" hidden>
             <summary>Catch up on earlier jobs</summary>
             <p class="muted">If you finished these jobs before their deadline, mark them now. Mama or Dad will check before adding minutes.</p>
@@ -127,16 +131,20 @@
             <summary>Add this to your phone or iPad</summary>
             <p>In Safari: tap Share → Add to Home Screen. Then open the icon.</p>
             <p>In the Home Screen app, pull down from the top to refresh.</p>
-            <p>Phone reminders aren't available yet. Mama or Dad can see jobs waiting to be checked when they sign in.</p>
+            <p>If notifications are available, choose them in the Notifications section. Mama or Dad can always see jobs waiting to be checked.</p>
           </details>
         </div>
+        <details class="panel notification-settings" id="notification-settings" hidden>
+          <summary>Notifications</summary>
+          <div id="notification-content"></div>
+        </details>
       </section>
     </main>
     <footer class="wrap">
-      <a href="index.html">Back to thefish.ca</a
+      <a href="https://thefish.ca/">Back to thefish.ca</a
       ><span>For our family</span>
-      <small class="build-identity" data-version="0.2.0" data-build="a6459a6bdc0b636a77724c31f87a053007f2e929">thefish · v0.2.0 · build a6459a6</small>
+      <small class="build-identity" data-version="0.3.0" data-build="0a7468c9495efbaf4089fa0f32da2f3453f78f29">thefish · v0.3.0 · build 0a7468c</small>
     </footer>
-    <script type="module" src="app.js?v=3c862f567ed4a0f4"></script>
+    <script type="module" src="app.js?v=4f16d74a7c0114ac"></script>
   </body>
 </html>
