@@ -1194,3 +1194,10 @@ summary {
   .feedback-card { padding:12px; }
   .feedback-form button,.feedback-triage button,.feedback-card button { width:100%; }
 }
+
+/* Private, non-redeemable Stars are understated beside real progress, never ranked between children. */
+.goal-stars{margin:10px 0;padding:9px 12px;border:1px solid #d7e5df;background:#f5faf7;border-radius:11px;overflow-wrap:anywhere}
+.goal-stars p{margin:3px 0;line-height:1.45}
+.goal-stars .goal-star-line,.goal-star-total{font-weight:700;color:#20534c}
+.goal-star-level{font-size:.93rem;color:#294f53}
+.goal-star-total{margin:10px 0;font-size:.93rem}
