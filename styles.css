@@ -1257,8 +1257,25 @@ summary {
 .job-answer-actions .hint { width:100%; }
 .chore-backlog > summary { display:flex; gap:9px; align-items:center; min-height:44px; cursor:pointer; }
 .chore-blue-marker { display:inline-block; width:9px; height:9px; border-radius:50%; background:#3b6edc; flex:none; }
-.chore-backlog-row { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:9px; border-top:1px solid #e5eaf1; padding:10px 0; font-size:.93rem; }
-.chore-backlog-row button { min-height:44px; }
+/* The day being reviewed must remain clear even when the date picker is closed. */
+.parent-day-heading { margin:0 0 9px; scroll-margin-top:16px; }
+.parent-day-heading .hint { display:block; font-size:.78rem; margin:0 0 2px; }
+.parent-day-heading h2 { margin:0; font-size:clamp(1.2rem,3.4vw,1.55rem); line-height:1.25; letter-spacing:-.02em; }
+.chore-backlog-hint { margin:3px 0 9px; font-size:.82rem; }
+.chore-backlog-row { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px 15px; border-top:1px solid #e5eaf1; padding:10px 0; font-size:.93rem; }
+.chore-backlog-identity { display:flex; flex-direction:column; gap:2px; min-width:0; }
+.chore-backlog-identity strong { color:var(--ink); font-size:.93rem; }
+.chore-backlog-identity span { color:var(--muted); font-size:.82rem; }
+.chore-backlog-actions { display:flex; flex-wrap:wrap; align-items:center; gap:4px 12px; }
+.chore-backlog-actions .job-answer-actions { gap:7px; margin:0; }
+.chore-backlog-actions .job-answer-actions button { min-height:44px; padding:7px 10px; font-size:.84rem; }
+.chore-backlog-review { min-height:44px; padding:7px 2px; border:0; background:transparent; color:#245cc4; text-decoration:underline; font-weight:600; font-size:.84rem; cursor:pointer; }
+.chore-backlog-review:hover { color:#194ca9; }
+.chore-backlog-review:focus-visible { outline:2px solid #245cc4; outline-offset:3px; border-radius:4px; }
+@media(max-width:600px) {
+  .chore-backlog-row { display:block; }
+  .chore-backlog-actions { margin-top:6px; }
+}
 .chore-needs-update { border-left:3px solid #3b6edc; padding-left:12px; }
 .past-jobs-picker { display:flex; flex-direction:column; gap:6px; max-width:320px; margin:12px 0; }
 .past-jobs-picker input { min-height:44px; width:100%; }
@@ -1266,4 +1283,6 @@ summary {
 @media(max-width:370px) {
   .job-answer-actions > button,.job-answer-actions .complete-toggle,
   .job-answer-options > button { width:100%; justify-content:center; }
+  /* Catch-up answers stay side by side even on the smallest supported phones. */
+  .chore-backlog-actions .job-answer-actions > button { width:auto; }
 }
