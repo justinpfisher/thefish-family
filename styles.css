@@ -1245,6 +1245,15 @@ summary {
 .parent-attention-item .chore-list {display:flex;flex-wrap:wrap;gap:4px 19px;margin:7px 0;font-size:.87rem;}
 .parent-attention-item .button {min-height:44px;padding:8px 13px;margin:6px 12px 6px 0;}
 .parent-attention-more {font-size:.85rem;display:inline-block;padding:9px 0;min-height:44px;border:0;background:transparent;color:#245cc4;text-decoration:underline;cursor:pointer;font-weight:650;}
+/* The same compact, dated review treatment covers pending and unanswered jobs. */
+.parent-review-status {margin:2px 0 3px;font-size:.85rem;}
+.parent-review-jobs {margin:3px 0 7px;}
+.parent-review-jobs > summary {min-height:44px;display:flex;align-items:center;cursor:pointer;font-size:.85rem;font-weight:600;color:#245cc4;}
+.parent-review-jobs > summary:focus-visible {outline:3px solid #245cc4;outline-offset:2px;}
+.parent-review-jobs .chore-list {display:block;margin:3px 0 9px;padding-left:22px;}
+.parent-attention-actions {display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:5px 0 0;}
+.parent-attention-actions button {min-height:44px;padding:8px 12px;font-size:.88rem;max-width:100%;white-space:normal;text-align:center;}
+@media(max-width:360px){.parent-attention-actions button {flex:1 1 100%;}}
 .parent-attention-more:focus-visible {outline:3px solid #245cc4;outline-offset:2px;}
 .parent-attention-context {margin:0 0 5px;}
 .parent-attention-older {margin-top:8px;}
