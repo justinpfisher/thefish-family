@@ -11,7 +11,7 @@
     <meta name="apple-mobile-web-app-title" content="thefish.ca" />
     <meta name="robots" content="noindex" />
     <title>Family space · thefish.ca</title>
-    <link rel="stylesheet" href="styles.css?v=4f38e6c0ce0be83b" />
+    <link rel="stylesheet" href="styles.css?v=2be3c07208f1ae28" />
     <link rel="manifest" href="manifest.json" />
     <link rel="apple-touch-icon" href="assets/icon-180.png" />
     <link rel="icon" href="assets/brand-favicon.svg" type="image/svg+xml" />
@@ -98,13 +98,20 @@
             <p class="muted" id="routines-help">When you're done, tap I'm done! Mama or Dad will check your jobs. You don't need the app before school.</p>
             <div id="routines"></div>
           </section>
-          <section id="my-goals" class="panel"></section>
-          <section id="feedback-child" class="panel feedback-view" hidden></section>
-          <details class="panel" id="catchup-panel" hidden>
-            <summary>Catch up on earlier jobs</summary>
-            <p class="muted">If you finished these jobs before their deadline, mark them now. Mama or Dad will check before adding minutes.</p>
+          <details class="panel chore-backlog" id="catchup-panel" hidden>
+            <summary><span class="chore-blue-marker" aria-hidden="true"></span>Days to catch up on</summary>
+            <p class="muted">These jobs haven't been marked yet. You can say what happened, even if it was on an earlier day.</p>
             <div id="catchup-list"></div>
           </details>
+          <details class="panel" id="past-jobs-panel">
+            <summary>Look back at past days</summary>
+            <label class="past-jobs-picker">Choose a day
+              <input id="child-past-date" type="date" />
+            </label>
+            <div id="child-past-jobs" aria-live="polite"></div>
+          </details>
+          <section id="my-goals" class="panel"></section>
+          <section id="feedback-child" class="panel feedback-view" hidden></section>
           <section class="panel screen-use-panel" id="screen-use-panel">
             <h2>Record screen time</h2>
             <div id="direct-timer" class="direct-timer"></div>
@@ -146,8 +153,8 @@
     <footer class="wrap">
       <a href="https://thefish.ca/">Back to thefish.ca</a
       ><span>For our family</span>
-      <small class="build-identity" data-version="0.3.0" data-build="2d4bed17a9af260bbcd96d4bf11a3d97a4a61010">thefish · v0.3.0 · build 2d4bed1</small>
+      <small class="build-identity" data-version="0.3.0" data-build="878a17d60cac995356ae0604a25f7dcaf161a04b">thefish · v0.3.0 · build 878a17d</small>
     </footer>
-    <script type="module" src="app.js?v=86cbf15f0f99e560"></script>
+    <script type="module" src="app.js?v=4f8552dfde231288"></script>
   </body>
 </html>

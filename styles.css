@@ -1244,3 +1244,26 @@ summary {
 .parent-attention-item .button {min-height:44px;padding:8px 13px;margin:6px 12px 6px 0;}
 .parent-attention-more {font-size:.85rem;display:inline-block;padding:9px 0;}
 .parent-attention-older > summary {font-weight:600;}
+
+/* Plain-language chore answers: equal-weight actions, no colour-coded blame. */
+.job-answer-actions { display:flex; flex-wrap:wrap; gap:9px; align-items:center; margin:10px 0; }
+.job-answer-actions > button, .job-answer-actions .complete-toggle,
+.job-answer-options > button { min-height:44px; max-width:100%; }
+.job-answer-actions .complete-toggle { display:inline-flex; }
+.job-answer-actions button { white-space:normal; }
+.job-answer-change { width:100%; }
+.job-answer-change > summary { cursor:pointer; color:#245cc4; font-weight:650; min-height:44px; display:flex; align-items:center; }
+.job-answer-options { display:flex; flex-wrap:wrap; align-items:center; gap:9px; padding:6px 0 10px; }
+.job-answer-actions .hint { width:100%; }
+.chore-backlog > summary { display:flex; gap:9px; align-items:center; min-height:44px; cursor:pointer; }
+.chore-blue-marker { display:inline-block; width:9px; height:9px; border-radius:50%; background:#3b6edc; flex:none; }
+.chore-backlog-row { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:9px; border-top:1px solid #e5eaf1; padding:10px 0; font-size:.93rem; }
+.chore-backlog-row button { min-height:44px; }
+.chore-needs-update { border-left:3px solid #3b6edc; padding-left:12px; }
+.past-jobs-picker { display:flex; flex-direction:column; gap:6px; max-width:320px; margin:12px 0; }
+.past-jobs-picker input { min-height:44px; width:100%; }
+#child-past-jobs .routine { margin:10px 0; }
+@media(max-width:370px) {
+  .job-answer-actions > button,.job-answer-actions .complete-toggle,
+  .job-answer-options > button { width:100%; justify-content:center; }
+}
