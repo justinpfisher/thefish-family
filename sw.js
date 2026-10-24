@@ -3,8 +3,6 @@ const DB_NAME="thefish-push-consent-v2",DB_STORE="consent";
 let serialized=Promise.resolve();
 const messages={
   jobsReady:"Something is ready for Mama or Dad to check.",
-  minutesAdded:"Your minutes have been updated.",
-  routineReminders:"There's a family reminder.",
   test:"This is a test alert from your family space."
 };
 function consent(){return new Promise((resolve,reject)=>{
