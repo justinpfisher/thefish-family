@@ -11,7 +11,7 @@
     <meta name="apple-mobile-web-app-title" content="thefish.ca" />
     <meta name="robots" content="noindex" />
     <title>Family space · thefish.ca</title>
-    <link rel="stylesheet" href="styles.css?v=efb66517ef8ec9e7" />
+    <link rel="stylesheet" href="styles.css?v=6b83ad30ccf14670" />
     <link rel="manifest" href="manifest.json" />
     <link rel="apple-touch-icon" href="assets/icon-180.png" />
     <link rel="icon" href="assets/brand-favicon.svg" type="image/svg+xml" />
@@ -23,7 +23,10 @@
     </header>
     <main id="main" class="app-wrap">
       <div id="notice" role="status" aria-live="polite"></div>
-      <div id="startup" class="startup-status" role="status" aria-live="polite">Opening your family space…</div>
+      <div id="startup" class="startup-status" role="status" aria-live="polite">
+        <span id="startup-message">Opening your family space…</span>
+        <button id="startup-retry" class="secondary" type="button" hidden>Retry</button>
+      </div>
       <section id="login" class="login-card" hidden>
         <p class="eyebrow">YOUR FAMILY SPACE</p>
         <h1>Welcome home.</h1>
@@ -154,8 +157,8 @@
     <footer class="wrap">
       <a href="https://thefish.ca/">Back to thefish.ca</a
       ><span>For our family</span>
-      <small class="build-identity" data-version="0.3.0" data-build="3a2abbcf0707819fb5084f2cb768ef94de5c765a">thefish · v0.3.0 · build 3a2abbc</small>
+      <small class="build-identity" data-version="0.3.0" data-build="1cffda8f5e7322f13f68cad8bc0f6f86b856d450">thefish · v0.3.0 · build 1cffda8</small>
     </footer>
-    <script type="module" src="app.js?v=03f4675792c6e3cf"></script>
+    <script type="module" src="app.js?v=8285adcb7fddd78f"></script>
   </body>
 </html>

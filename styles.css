@@ -625,7 +625,7 @@ summary {
 .app-body .balance-card .eyebrow { color: #577296; }
 .app-body .status { background: #eef2f7; color: #40516a; }
 .app-body .login-card { box-shadow: 0 8px 30px #18243608; }
-.app-body .startup-status { min-height: 120px; display:flex; align-items:center; justify-content:center; padding:30px 16px; color:var(--muted); font-size:1rem; text-align:center; }
+.app-body .startup-status { min-height: 120px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; padding:30px 16px; color:var(--muted); font-size:1rem; text-align:center; }
 .app-body .startup-status[hidden],.app-body #login[hidden] { display:none!important; }
 .app-body .panel { border-radius: 16px; }
 .dashboard-toolbar { display: flex; align-items: end; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
